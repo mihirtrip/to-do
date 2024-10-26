@@ -1,38 +1,93 @@
-.App {
+body{
+  background-color: #17181f;
+  color:#ddd
+  
+}
+*{
+  box-sizing: border-box;
+}
+main{
+  max-width: 300px;
+  margin: 20px auto;
+}
+form{
+  border: 3px solid #30313d;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+}
+form input[type='text'] {
+  background: none;
+  border: 0;
+  color: #61dafb;
+  display: block;
+  width: 100%;
+  padding:0px 8px ;
+
+}
+form button {
+  background-color: #61dafb;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+div.task{
+  background-color: #30313d;
+  border-radius: 10px;
+  padding: 5px 9px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  transition: opacity .3s linear;
+}
+div.task svg{
+  height: 20px;
+  margin-right: 6px;
+  fill: #61dafb;
+}
+div.task.done{
+  opacity: 0.3;
+ 
+}
+div.checkbox{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+div.task-name{
+  flex-grow: 1;
+}
+div.task span{
+  position: relative;
+}
+div.task span:before {
+  content: '';
+  display: block;
+  width: 0%; /* Set width to cover the text */
+  height: 1px; /* Line thickness */
+  background-color: #ddd; /* Line color */
+  position: absolute;
+  top: 53%; /* Center the line vertically */
+   transform: translateY(-50%);/* Adjust the position to perfectly center */
+  transition: width .1s linear;
+  /* visibility: hidden; Initially hidden */
+}
+
+div.task.done span:before {
+  /* visibility: visible; Show line when done */
+  width: 100%;
+}
+h1,h2 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button.trash{
+  background: none;
+  border: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button.trash svg{
+  fill: #888;
+  height: 16px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  cursor: pointer;
 }
